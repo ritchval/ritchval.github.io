@@ -1,0 +1,98 @@
+.positions-section {
+  padding-top: 120px;
+  padding-bottom: 50px;
+  background-color: #ffffff;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.highlight {
+  color: #007bff;
+}
+
+.position-card {
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.position-card-view {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  position: relative;
+  padding-top: 15px;
+}
+
+.position-card-view:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.position-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.position-badge.ph-d {
+  background-color: #007bff;
+}
+
+.position-badge.masters {
+  background-color: #28a745;
+}
+
+.position-badge.postdoc {
+  background-color: #6610f2;
+}
+
+.position-badge.ra {
+  background-color: #fd7e14;
+}
+
+.apply-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.apply-btn:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.general-applications {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.email-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}

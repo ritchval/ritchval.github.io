@@ -1,0 +1,66 @@
+.publications-section {
+  padding-top: 120px;
+  padding-bottom: 50px;
+  background-color: #ffffff;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.highlight {
+  color: #007bff;
+}
+
+.publication-card {
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.publication-card-view {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.publication-card-view:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.publication-card-view .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #343a40;
+}
+
+.publication-card-view .card-subtitle {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.publication-card-view .card-text {
+  margin-bottom: 10px;
+}
+
+.publication-card-view .card-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 15px;
+  background-color: #007bff;
+  color: white !important;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.publication-card-view .card-link:hover {
+  background-color: #0056b3;
+}

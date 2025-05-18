@@ -1,0 +1,61 @@
+.about-section {
+  padding-top: 120px;
+  padding-bottom: 50px;
+  background-color: #f8f9fa;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: #007bff;
+}
+
+.section-subheading {
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.education-list, .interests-list {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.education-list li, .interests-list li {
+  margin-bottom: 0.75rem;
+}
+
+.about-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-img img {
+  max-width: 250px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  text-align: left;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}

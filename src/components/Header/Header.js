@@ -26,7 +26,7 @@ function Header() {
     >
       <Container>
         <Navbar.Brand as={Link} to="/">
-          <strong className="main-name">Ritch Valdez</strong>
+          <strong className="main-name">Ricardo Valdez</strong>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"

@@ -18,13 +18,12 @@ function Home() {
 
               <h1 className="heading-name">
                 I'm
-                <strong className="main-name"> Ritch Valdez</strong>
+                <strong className="main-name"> Ricardo Valdez</strong>
               </h1>
               
               <div className="heading-description">
                 <p>
-                  Academic researcher with expertise in [Your Research Areas]. 
-                  Currently [Your Current Position] at [Your Institution].
+                  Academic researcher at Tecnológico Nacional de México / Instituto Tecnólogico de Tijuana.
                 </p>
               </div>
             </Col>
@@ -34,7 +33,7 @@ function Home() {
                 {/* Replace with your profile image */}
                 <img 
                   src="https://via.placeholder.com/400" 
-                  alt="Ritch Valdez" 
+                  alt="Ricardo Valdez" 
                   className="img-fluid"
                 />
               </div>

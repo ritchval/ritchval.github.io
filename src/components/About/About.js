@@ -12,13 +12,8 @@ function About() {
               About <strong className="highlight">Me</strong>
             </h1>
             <p className="about-text">
-              I am Ritch Valdez, an academic researcher specializing in [Your Field]. 
-              I received my Ph.D. from [University Name] in [Year] and currently work as 
-              [Your Position] at [Your Institution].
-            </p>
-            <p className="about-text">
-              My research focuses on [Research Focus]. I am passionate about [Your Interests]
-              and dedicated to [Your Goals].
+              I am Ricardo Valdez, an academic researcher at Tecnológico Nacional de México / Instituto Tecnólogico de Tijuana.
+              {/* Add more details about your background */}
             </p>
             
             <h2 className="section-subheading">Education</h2>
@@ -45,19 +40,19 @@ function About() {
           <Col md={4} className="about-img">
             <img 
               src="https://via.placeholder.com/300" 
-              alt="Ritch Valdez" 
+              alt="Ricardo Valdez" 
               className="img-fluid rounded-circle" 
             />
             <div className="contact-info mt-4">
               <h3>Contact Information</h3>
               <p>
-                <strong>Email:</strong> your.email@institution.edu
+                <strong>Email:</strong> ricardo.valdez@tectijuana.edu.mx
               </p>
               <p>
-                <strong>Office:</strong> Building Name, Room Number
+                <strong>Office:</strong> Tecnológico Nacional de México
               </p>
               <p>
-                <strong>Address:</strong> Institution Name, Street, City, Country
+                <strong>Address:</strong> Blvd. Industrial 18881, Cd Industrial, 22430 Tijuana, B.C.
               </p>
             </div>
           </Col>

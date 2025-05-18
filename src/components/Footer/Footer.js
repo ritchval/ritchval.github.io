@@ -7,7 +7,8 @@ import {
   faLinkedin,
   faTwitter,
   faResearchgate,
-  faOrcid
+  faOrcid,
+  faGoogle
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.css";
@@ -20,10 +21,10 @@ function Footer() {
     <Container fluid className="footer">
       <Row>
         <Col md="4" className="footer-body">
-          <h3>Ritch Valdez</h3>
-          <p>[Your Institution]</p>
-          <p>[Department/Faculty]</p>
-          <p>[Address]</p>
+          <h3>Ricardo Valdez</h3>
+          <p>Tecnológico Nacional de México</p>
+          <p>Instituto Tecnólogico de Tijuana</p>
+          <p>Blvd. Industrial 18881, Cd Industrial, 22430 Tijuana, B.C.</p>
         </Col>
         
         <Col md="4" className="footer-body">
@@ -42,7 +43,7 @@ function Footer() {
           <ul className="footer-icons">
             <li className="social-icons">
               <a
-                href="mailto:your.email@institution.edu"
+                href="mailto:ricardo.valdez@tectijuana.edu.mx"
                 target="_blank"
                 rel="noreferrer"
                 className="icon-colour email-icon"
@@ -82,6 +83,16 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
+                href="https://scholar.google.com.mx/citations?user=5u9mViAAAAAJ"
+                target="_blank"
+                rel="noreferrer"
+                className="icon-colour scholar-icon"
+              >
+                <FontAwesomeIcon icon={faGoogle} />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
                 href="https://researchgate.net/profile/yourprofile"
                 target="_blank"
                 rel="noreferrer"
@@ -92,7 +103,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://orcid.org/your-orcid-id"
+                href="https://orcid.org/0000-0001-8196-0027"
                 target="_blank"
                 rel="noreferrer"
                 className="icon-colour orcid-icon"
@@ -106,7 +117,7 @@ function Footer() {
       <Row>
         <Col md="12" className="footer-copyright">
           <p>
-            Copyright © {year} Ritch Valdez | All Rights Reserved
+            Copyright © {year} Ricardo Valdez | All Rights Reserved
           </p>
         </Col>
       </Row>

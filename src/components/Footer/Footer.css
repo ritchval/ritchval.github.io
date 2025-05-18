@@ -99,6 +99,10 @@
   background-color: #a6ce39;
 }
 
+.scholar-icon:hover {
+  background-color: #4285F4;
+}
+
 .footer-copyright {
   margin-top: 20px;
   padding-top: 20px;

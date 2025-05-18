@@ -14,37 +14,48 @@ function Footer() {
   let date = new Date();
   let year = date.getFullYear();
   
+  const links = [
+    { to: "/", text: "Home" },
+    { to: "/founder", text: "Founder" },
+    { to: "/research", text: "Research" },
+    { to: "/projects", text: "Projects" },
+    { to: "/courses", text: "Courses" },
+    { to: "/tools", text: "Tools" },
+    // Add more links here if needed
+  ];
+
   return (
     <Container fluid className="footer">
       <Row>
         <Col md="4" className="footer-body">
-          <h3>Ricardo Valdez</h3>
           <p>Tecnológico Nacional de México</p>
           <p>Instituto Tecnólogico de Tijuana</p>
           <p>Blvd. Industrial 18881, Cd Industrial, 22430 Tijuana, B.C.</p>
         </Col>
         
-        <Col md="4" className="footer-body">
+        <Col md="4" className="footer-body footer-links-section">
           <h3>Links</h3>
-          <div className="footer-links-paired"> 
-            {[
-              { to: "/", text: "Home" },
-              { to: "/founder", text: "Founder" },
-              { to: "/research", text: "Research" },
-              { to: "/projects", text: "Projects" },
-              { to: "/courses", text: "Courses" },
-              { to: "/tools", text: "Tools" }, // Add Tools link
-              // Add more links here if needed, ensure even number for perfect pairing or handle odd one
-            ].reduce((acc, link, index, array) => {
+          <div className="footer-links-container">
+            {links.reduce((acc, link, index, array) => {
               if (index % 2 === 0) {
-                const pair = [
-                  <Link key={link.to} to={link.to}>{link.text}</Link>
-                ];
-                if (array[index + 1]) {
-                  pair.push(<span key={`sep-${index}`} className="link-separator"> | </span>);
-                  pair.push(<Link key={array[index + 1].to} to={array[index + 1].to}>{array[index + 1].text}</Link>);
-                }
-                acc.push(<div key={`pair-${index / 2}`} className="link-pair">{pair}</div>);
+                const row = (
+                  <Row key={`link-row-${index / 2}`} className="footer-link-row">
+                    <Col xs={5} className="footer-link-left">
+                      <Link to={link.to}>{link.text}</Link>
+                    </Col>
+                    <Col xs={2} className="footer-link-separator text-center">
+                      {array[index + 1] ? "|" : ""}
+                    </Col>
+                    <Col xs={5} className="footer-link-right">
+                      {array[index + 1] ? (
+                        <Link to={array[index + 1].to}>{array[index + 1].text}</Link>
+                      ) : (
+                        <span>&nbsp;</span> 
+                      )}
+                    </Col>
+                  </Row>
+                );
+                acc.push(row);
               }
               return acc;
             }, [])}
@@ -100,7 +111,7 @@ function Footer() {
       <Row>
         <Col md="12" className="footer-copyright">
           <p>
-            Copyright © {year} Ricardo Valdez | All Rights Reserved
+            Copyright © {year} Ricardo Valdez Group | All Rights Reserved
           </p>
         </Col>
       </Row>

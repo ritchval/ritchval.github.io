@@ -46,7 +46,7 @@ function Founder() { // Renamed from About
             <div className="contact-info mt-4">
               <h3>Contact Information</h3>
               <p>
-                <strong>Email:</strong> ricardo.valdez@tectijuana.edu.mx
+                <strong>Email:</strong> <a href="mailto:ricardo.valdez@tectijuana.edu.mx">ricardo.valdez@tectijuana.edu.mx</a>
               </p>
               <p>
                 <strong>Office:</strong> Tecnológico Nacional de México

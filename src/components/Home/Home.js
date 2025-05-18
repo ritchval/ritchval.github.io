@@ -32,7 +32,7 @@ function Home() {
               <div className="profile-image">
                 {/* Replace with your profile image */}
                 <img 
-                  src="https://via.placeholder.com/400" 
+                  src="/assets/images/Profile.jpg" 
                   alt="Ricardo Valdez" 
                   className="img-fluid"
                 />

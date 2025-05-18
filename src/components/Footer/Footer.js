@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
   faGithub,
-  faLinkedin,
-  faTwitter,
-  faResearchgate,
   faOrcid,
   faGoogle
 } from "@fortawesome/free-brands-svg-icons";

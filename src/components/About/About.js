@@ -39,7 +39,7 @@ function About() {
           </Col>
           <Col md={4} className="about-img">
             <img 
-              src="https://via.placeholder.com/300" 
+              src="/assets/images/Profile.jpg" 
               alt="Ricardo Valdez" 
               className="img-fluid rounded-circle" 
             />

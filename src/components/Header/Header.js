@@ -33,7 +33,7 @@ function Header({ theme, toggleTheme }) {
               <Nav.Link as={Link} to="/" onClick={() => setExpand(false)}>Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link as={Link} to="/founder" onClick={() => setExpand(false)}>Founder</Nav.Link> {/* Changed path and text */}
+              <Nav.Link as={Link} to="/founder" onClick={() => setExpand(false)}>Founder</Nav.Link> 
             </Nav.Item>
             <Nav.Item>
               <Nav.Link as={Link} to="/research" onClick={() => setExpand(false)}>Research</Nav.Link> 
@@ -45,12 +45,15 @@ function Header({ theme, toggleTheme }) {
               <Nav.Link as={Link} to="/courses" onClick={() => setExpand(false)}>Courses</Nav.Link>
             </Nav.Item>
             <Nav.Item>
+              <Nav.Link as={Link} to="/tools" onClick={() => setExpand(false)}>Tools</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
               <Nav.Link as={Link} to="/alumni" onClick={() => setExpand(false)}>Alumni</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link as={Link} to="/positions" onClick={() => setExpand(false)}>Open Positions</Nav.Link>
             </Nav.Item>
-            <Nav.Item className="d-flex align-items-center"> {/* Added alignment classes */}
+            <Nav.Item className="d-flex align-items-center"> 
               <Button
                 variant="outline-light" // This variant is mostly overridden by our custom CSS
                 onClick={toggleTheme}

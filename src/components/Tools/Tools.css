@@ -1,0 +1,68 @@
+.tools-section {
+  padding-top: 120px;
+  padding-bottom: 50px;
+  background-color: var(--bg-color) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* .section-heading, .section-description, .highlight are handled by global rules or App.css */
+
+.subsection-heading {
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.tools-nav-pills .nav-link {
+  color: var(--text-color);
+  border: 1px solid var(--highlight-color);
+  margin: 0 5px;
+  border-radius: 0.25rem; /* Standard Bootstrap radius */
+}
+
+.tools-nav-pills .nav-link.active {
+  background-color: var(--highlight-color) !important;
+  color: white !important; /* Assuming highlight contrasts with white */
+  border-color: var(--highlight-color) !important;
+}
+.dark .tools-nav-pills .nav-link.active {
+  color: var(--bg-color) !important; /* For dark theme if highlight is light */
+}
+
+
+.tool-card-col {
+  display: flex;
+}
+
+.tool-card-view {
+  /* Uses .card styles from App.css */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card-view:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+.dark .tool-card-view:hover {
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1) !important;
+}
+
+.tool-card-view .card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.tool-card-view .card-text {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Allows text to take available space before button */
+}
+
+/* .primary-btn styling is in App.css */
+.tool-card-view .primary-btn {
+  align-self: flex-start; /* Aligns button to the left of the card body */
+  width: auto; /* Ensure button is not full width unless intended */
+}

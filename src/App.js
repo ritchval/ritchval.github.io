@@ -6,11 +6,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Import components
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
-import Founder from "./components/Founder/Founder"; // Changed from About
+import Founder from "./components/Founder/Founder";
 import Alumni from "./components/Alumni/Alumni";
 import Research from "./components/Research/Research"; 
 import Projects from "./components/Projects/Projects";
 import Courses from "./components/Courses/Courses";
+import Tools from "./components/Tools/Tools"; 
 import OpenPositions from "./components/OpenPositions/OpenPositions";
 import Footer from "./components/Footer/Footer";
 
@@ -36,11 +37,12 @@ function App() {
         <Header theme={theme} toggleTheme={toggleTheme} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/founder" element={<Founder />} /> {/* Changed path and element */}
+          <Route path="/founder" element={<Founder />} /> 
           <Route path="/alumni" element={<Alumni />} />
           <Route path="/research" element={<Research />} /> 
           <Route path="/projects" element={<Projects />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/tools" element={<Tools />} /> {/* Add Tools route */}
           <Route path="/positions" element={<OpenPositions />} />
         </Routes>
         <Footer />

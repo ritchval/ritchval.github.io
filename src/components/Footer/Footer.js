@@ -26,14 +26,15 @@ function Footer() {
         
         <Col md="4" className="footer-body">
           <h3>Links</h3>
-          <div className="footer-links-paired"> {/* Changed from ul to div and new class */}
+          <div className="footer-links-paired"> 
             {[
               { to: "/", text: "Home" },
               { to: "/founder", text: "Founder" },
               { to: "/research", text: "Research" },
               { to: "/projects", text: "Projects" },
               { to: "/courses", text: "Courses" },
-              // Add more links here if needed
+              { to: "/tools", text: "Tools" }, // Add Tools link
+              // Add more links here if needed, ensure even number for perfect pairing or handle odd one
             ].reduce((acc, link, index, array) => {
               if (index % 2 === 0) {
                 const pair = [

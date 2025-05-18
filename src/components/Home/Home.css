@@ -8,7 +8,7 @@
 }
 
 .home-content {
-  padding: 9rem 0 2rem !important;
+  padding: 5rem 0 2rem !important; /* Reduced top padding from 9rem to 5rem */
   color: var(--text-color); /* Use CSS variable */
   text-align: left;
 }

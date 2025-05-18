@@ -5,24 +5,13 @@ import "./Header.css";
 
 function Header() {
   const [expand, setExpand] = useState(false);
-  const [navColour, setNavColour] = useState(false);
-
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      setNavColour(true);
-    } else {
-      setNavColour(false);
-    }
-  }
-
-  window.addEventListener("scroll", scrollHandler);
 
   return (
     <Navbar
       expanded={expand}
       fixed="top"
       expand="md"
-      className={navColour ? "sticky" : "navbar"}
+      className="navbar sticky" // Always apply both 'navbar' and 'sticky' classes
     >
       <Container>
         <Navbar.Brand as={Link} to="/">

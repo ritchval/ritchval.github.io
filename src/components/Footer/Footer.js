@@ -53,32 +53,12 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://github.com/yourprofile"
+                href="https://github.com/ritchval"
                 target="_blank"
                 rel="noreferrer"
                 className="icon-colour github-icon"
               >
                 <FontAwesomeIcon icon={faGithub} />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://linkedin.com/in/yourprofile"
-                target="_blank"
-                rel="noreferrer"
-                className="icon-colour linkedin-icon"
-              >
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://twitter.com/yourprofile"
-                target="_blank"
-                rel="noreferrer"
-                className="icon-colour twitter-icon"
-              >
-                <FontAwesomeIcon icon={faTwitter} />
               </a>
             </li>
             <li className="social-icons">
@@ -89,16 +69,6 @@ function Footer() {
                 className="icon-colour scholar-icon"
               >
                 <FontAwesomeIcon icon={faGoogle} />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://researchgate.net/profile/yourprofile"
-                target="_blank"
-                rel="noreferrer"
-                className="icon-colour researchgate-icon"
-              >
-                <FontAwesomeIcon icon={faResearchgate} />
               </a>
             </li>
             <li className="social-icons">

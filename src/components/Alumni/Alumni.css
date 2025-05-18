@@ -1,21 +1,8 @@
 .alumni-section {
   padding-top: 120px;
   padding-bottom: 50px;
-  background-color: #ffffff;
-}
-
-.section-heading {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.section-description {
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-}
-
-.highlight {
-  color: #007bff;
+  background-color: var(--bg-color) !important;
+  transition: background-color 0.3s ease;
 }
 
 .alumni-card {
@@ -23,16 +10,12 @@
   margin-bottom: 30px;
 }
 
-.alumni-card-view {
-  border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  height: 100%;
-}
-
 .alumni-card-view:hover {
   transform: scale(1.02);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+}
+.dark .alumni-card-view:hover {
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1) !important;
 }
 
 .alumni-img {
@@ -41,10 +24,22 @@
   object-fit: cover;
   border-radius: 50%;
   margin: 20px auto 15px auto;
+  border: 3px solid var(--card-bg-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.dark .alumni-img {
+  border: 3px solid var(--card-bg-color);
 }
 
 .alumni-links {
   margin-top: 15px;
   display: flex;
   justify-content: space-around;
+}
+
+.alumni-links .card-link {
+  color: var(--link-color) !important;
+}
+.alumni-links .card-link:hover {
+  color: var(--highlight-color) !important;
 }

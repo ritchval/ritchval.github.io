@@ -1,21 +1,8 @@
 .positions-section {
   padding-top: 120px;
   padding-bottom: 50px;
-  background-color: #ffffff;
-}
-
-.section-heading {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.section-description {
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-}
-
-.highlight {
-  color: #007bff;
+  background-color: var(--bg-color) !important;
+  transition: background-color 0.3s ease;
 }
 
 .position-card {
@@ -24,17 +11,16 @@
 }
 
 .position-card-view {
-  border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  height: 100%;
   position: relative;
   padding-top: 15px;
 }
 
 .position-card-view:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+.dark .position-card-view:hover {
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1) !important;
 }
 
 .position-badge {
@@ -50,49 +36,48 @@
 .position-badge.ph-d {
   background-color: #007bff;
 }
+.dark .position-badge.ph-d {
+  background-color: #3da9ff;
+}
 
 .position-badge.masters {
   background-color: #28a745;
+}
+.dark .position-badge.masters {
+  background-color: #48c765;
 }
 
 .position-badge.postdoc {
   background-color: #6610f2;
 }
+.dark .position-badge.postdoc {
+  background-color: #8941f4;
+}
 
 .position-badge.ra {
   background-color: #fd7e14;
 }
-
-.apply-btn {
-  display: inline-block;
-  padding: 8px 20px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.apply-btn:hover {
-  background-color: #0056b3;
-  color: white;
+.dark .position-badge.ra {
+  background-color: #ff9a3c;
 }
 
 .general-applications {
-  background-color: #f8f9fa;
+  background-color: var(--section-bg-alt-color) !important;
   padding: 30px;
   border-radius: 10px;
   text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .email-link {
   display: inline-block;
   margin-top: 15px;
-  color: #007bff;
+  color: var(--link-color) !important;
   font-weight: bold;
   text-decoration: none;
 }
 
 .email-link:hover {
   text-decoration: underline;
+  color: var(--highlight-color) !important;
 }

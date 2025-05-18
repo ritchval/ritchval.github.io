@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIcon
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"; // Import specific icons
 import "./Header.css";
 
-function Header() {
+function Header({ theme, toggleTheme }) {
   const [expand, setExpand] = useState(false);
 
   return (
@@ -11,11 +13,11 @@ function Header() {
       expanded={expand}
       fixed="top"
       expand="md"
-      className="navbar sticky" // Always apply both 'navbar' and 'sticky' classes
+      className="navbar sticky"
     >
       <Container>
         <Navbar.Brand as={Link} to="/">
-          <strong className="main-name">Ricardo Valdez</strong>
+          <strong className="main-name">Ricardo Valdez Group</strong>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -31,10 +33,10 @@ function Header() {
               <Nav.Link as={Link} to="/" onClick={() => setExpand(false)}>Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link as={Link} to="/about" onClick={() => setExpand(false)}>About</Nav.Link>
+              <Nav.Link as={Link} to="/founder" onClick={() => setExpand(false)}>Founder</Nav.Link> {/* Changed path and text */}
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link as={Link} to="/publications" onClick={() => setExpand(false)}>Publications</Nav.Link>
+              <Nav.Link as={Link} to="/research" onClick={() => setExpand(false)}>Research</Nav.Link> 
             </Nav.Item>
             <Nav.Item>
               <Nav.Link as={Link} to="/projects" onClick={() => setExpand(false)}>Projects</Nav.Link>
@@ -47,6 +49,17 @@ function Header() {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link as={Link} to="/positions" onClick={() => setExpand(false)}>Open Positions</Nav.Link>
+            </Nav.Item>
+            <Nav.Item className="d-flex align-items-center"> {/* Added alignment classes */}
+              <Button
+                variant="outline-light" // This variant is mostly overridden by our custom CSS
+                onClick={toggleTheme}
+                className="theme-toggle-btn"
+                // size="sm" // Size is now controlled by font-size in CSS
+                aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+              >
+                <FontAwesomeIcon icon={theme === 'light' ? faMoon : faSun} />
+              </Button>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

@@ -1,8 +1,9 @@
 .footer {
-  background-color: #0a1929;
-  color: white;
+  background-color: var(--footer-bg-color) !important;
+  color: var(--footer-text-color) !important;
   padding-top: 50px;
   padding-bottom: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .footer-body {
@@ -14,6 +15,7 @@
   margin-bottom: 20px;
   position: relative;
   padding-bottom: 10px;
+  color: var(--footer-text-color) !important;
 }
 
 .footer-body h3::after {
@@ -23,7 +25,11 @@
   bottom: 0;
   width: 50px;
   height: 3px;
-  background-color: #007bff;
+  background-color: var(--highlight-color) !important;
+}
+
+.footer-body:first-of-type p {
+  margin-bottom: 0.25rem; 
 }
 
 .footer-links {
@@ -37,13 +43,15 @@
 }
 
 .footer-links li a {
-  color: #ccc;
+  color: var(--footer-text-color) !important; /* Adjust if #ccc was specific */
+  opacity: 0.8;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-links li a:hover {
-  color: #007bff;
+  color: var(--highlight-color) !important;
+  opacity: 1;
 }
 
 .footer-icons {
@@ -66,9 +74,13 @@
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1); /* This needs careful theming */
   transition: all 0.3s ease;
-  color: white;
+  color: var(--footer-text-color) !important;
+}
+
+.dark .social-icons a {
+  background-color: rgba(200, 200, 200, 0.15); /* Example for dark theme */
 }
 
 .social-icons a:hover {
@@ -109,5 +121,6 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   font-size: 0.9rem;
-  color: #ccc;
+  color: var(--footer-text-color) !important; /* Adjust if #ccc was specific */
+  opacity: 0.7;
 }

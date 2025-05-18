@@ -1,15 +1,15 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "./About.css";
+import "./Founder.css"; // Changed from ./About.css
 
-function About() {
+function Founder() { // Renamed from About
   return (
-    <Container fluid className="about-section">
+    <Container fluid className="about-section"> {/* Class name can remain or be changed to founder-section if desired */}
       <Container>
-        <Row className="about-content">
-          <Col md={8} className="about-description">
+        <Row className="about-content"> {/* Class name can remain or be changed */}
+          <Col md={8} className="about-description"> {/* Class name can remain or be changed */}
             <h1 className="section-heading">
-              About <strong className="highlight">Me</strong>
+              About The <strong className="highlight">Founder</strong> {/* Updated heading */}
             </h1>
             <p className="about-text">
               I am Ricardo Valdez, a professor researcher at the Instituto Tecnológico de Tijuana. I completed my PhD in Science and Engineering of Materials at the Universidad Nacional Autónoma de México (UNAM) in 2015. Following my PhD, from 2015 to 2017, I held a postdoctoral position at the Centro de Investigación y Desarrollo Tecnológico en Electroquímica (CIDETEQ), where I focused on developing nanomaterials for water oxidation, a key half-reaction in artificial photosynthesis. My research is primarily oriented towards the design and synthesis of catalysts for clean energy production.
@@ -62,4 +62,4 @@ function About() {
   );
 }
 
-export default About;
+export default Founder; // Renamed from About

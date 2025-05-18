@@ -1,4 +1,39 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --navbar-bg-color: #1b1a2ea9;
+  --navbar-text-color: white;
+  --navbar-brand-color: white; /* Changed to white */
+  --highlight-color: #007bff;
+  --card-bg-color: #ffffff;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --section-bg-alt-color: #f8f9fa;
+  --footer-bg-color: #0a1929;
+  --footer-text-color: white;
+  --link-color: #007bff;
+  --button-outline-color: white; /* For theme toggle button on light theme navbar */
+}
+
+.dark {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --navbar-bg-color: #222030; /* Darker navbar for dark theme */
+  --navbar-text-color: #e0e0e0;
+  --navbar-brand-color: white; /* Changed to white */
+  --highlight-color: #87cefa;
+  --card-bg-color: #1e1e1e;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --section-bg-alt-color: #1a1a1a;
+  --footer-bg-color: #03080f;
+  --footer-text-color: #cccccc;
+  --link-color: #87cefa;
+  --button-outline-color: #e0e0e0; /* For theme toggle button on dark theme navbar */
+}
+
 body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
   margin: 0;
   overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,73 +41,66 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff !important;
 }
 
 .App {
   text-align: center;
   position: relative;
   min-height: 100vh;
+  background-color: var(--bg-color); /* Ensure App div also gets themed background */
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* General text elements */
+h1, h2, h3, h4, h5, h6, p, li, .card-title, .card-text, .card-subtitle, 
+.section-heading, .section-description, .about-text, .education-list li, .interests-list li,
+.alumni-card .card-title, .alumni-card .card-subtitle, .alumni-card .card-text,
+.project-card .card-title, .project-card .card-text,
+.courses-section .accordion-button, .courses-section .card-title, .courses-section .card-subtitle, .courses-section .card-text,
+.positions-section .card-title, .positions-section .card-text,
+.publication-card-view .card-title, .publication-card-view .card-subtitle, .publication-card-view .card-text {
+  color: var(--text-color) !important; /* Use important to override bootstrap if needed */
+  transition: color 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.text-muted { /* Bootstrap's text-muted might need specific override */
+  color: var(--text-muted-color, #6c757d) !important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Global Styles */
-.section-heading {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.section-description {
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-  text-align: center;
+.dark .text-muted {
+  --text-muted-color: #a0a0a0 !important;
 }
 
 .highlight {
-  color: #007bff;
+  color: var(--highlight-color) !important;
+  transition: color 0.3s ease;
 }
 
+a {
+  color: var(--link-color);
+}
+a:hover {
+  color: var(--highlight-color);
+}
+
+/* Card specific styles */
+.card, .publication-card-view, .project-card-view, .alumni-card-view, .position-card-view, .courses-section .card {
+  background-color: var(--card-bg-color) !important;
+  box-shadow: var(--card-shadow) !important;
+  border: 1px solid transparent; /* Optional: add themed border */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.dark .card, .dark .publication-card-view, .dark .project-card-view, .dark .alumni-card-view, .dark .position-card-view, .dark .courses-section .card {
+  border: 1px solid #333; /* Example border for dark theme cards */
+}
+
+
 /* Button Styles */
-.primary-btn {
+.primary-btn, .publication-card-view .card-link, .project-card-view .card-link, .apply-btn {
+  background-color: var(--highlight-color) !important;
+  color: white !important; /* Assuming highlight color contrasts with white */
   display: inline-block;
   padding: 10px 25px;
-  background-color: #007bff;
-  color: white !important;
   border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
@@ -80,39 +108,93 @@ body {
   border: none;
   cursor: pointer;
 }
-
-.primary-btn:hover {
-  background-color: #0056b3;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.primary-btn:hover, .publication-card-view .card-link:hover, .project-card-view .card-link:hover, .apply-btn:hover {
+  opacity: 0.8; /* Simpler hover for themed button */
+}
+.dark .primary-btn, .dark .publication-card-view .card-link, .dark .project-card-view .card-link, .dark .apply-btn {
+   color: var(--bg-color) !important; /* Text color for dark theme buttons if highlight is light */
 }
 
-.secondary-btn {
-  display: inline-block;
-  padding: 9px 24px;
-  background-color: transparent;
-  color: #007bff !important;
-  border: 2px solid #007bff;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  cursor: pointer;
+
+/* Header Styles */
+.sticky {
+  background-color: var(--navbar-bg-color) !important;
+  transition: all 0.3s ease-out 0s !important;
+  box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important; /* Shadow might need theming too */
+  backdrop-filter: blur(15px) !important;
+}
+.dark .sticky {
+  box-shadow: 0px 10px 10px 0px rgba(200, 200, 200, 0.07) !important; /* Lighter shadow for dark */
 }
 
-.secondary-btn:hover {
-  background-color: rgba(0, 123, 255, 0.1);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+.navbar {
+  position: fixed !important;
+  transition: all 0.3s ease-out 0s !important;
+  padding: 0.3rem 2rem !important;
+  font-size: 1.2rem !important;
 }
 
-/* Responsive adjustments */
+.navbar-toggler {
+  position: relative !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.navbar-toggler span {
+  display: block !important;
+  background-color: var(--navbar-text-color) !important; /* Use navbar text color */
+  height: 4px !important;
+  width: 27px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  transform: rotate(0deg) !important;
+  left: 0 !important;
+  opacity: 1 !important;
+}
+.navbar .navbar-brand {
+  /* color: var(--highlight-color) !important; */ /* Brand can have its own color */
+  font-size: 1.5rem !important;
+}
+
+.nav-link {
+  color: var(--navbar-text-color) !important;
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}
+
+.nav-link:hover {
+  color: var(--highlight-color) !important;
+}
 @media (max-width: 767px) {
-  .section-heading {
-    font-size: 2rem;
+  .navbar {
+    padding: 1rem 2rem !important;
+    font-size: 1.4rem !important;
+    background-color: var(--navbar-bg-color) !important; /* Ensure mobile navbar also themed */
   }
-  
-  .section-description {
-    font-size: 1.1rem;
-  }
+}
+
+.navbar .main-name {
+  color: var(--navbar-brand-color) !important; 
+}
+
+.theme-toggle-btn {
+  color: var(--button-outline-color) !important;
+  border: none !important; 
+  background-color: transparent !important; 
+  margin-left: 15px;
+  padding: 0.3rem 0.6rem; 
+  font-size: 1.15rem; /* Increased from 1rem for ~15% larger icon */
+  line-height: 1; 
+  box-shadow: none !important; 
+}
+.theme-toggle-btn:hover, .theme-toggle-btn:focus {
+  color: var(--highlight-color) !important; 
+  background-color: transparent !important; 
+  border: none !important; 
+  box-shadow: none !important; 
+  outline: none !important; 
+}
+
+.theme-toggle-btn svg { /* Target the SVG icon directly if more control is needed */
+  vertical-align: middle; /* Helps with alignment */
 }

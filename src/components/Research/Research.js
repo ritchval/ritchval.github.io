@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import "./Publications.css";
+import "./Research.css"; // Changed from Publications.css
 
 // Helper component to highlight specified names in a text
 const HighlightedAuthors = ({ authors }) => {
@@ -44,7 +44,8 @@ const HighlightedAuthors = ({ authors }) => {
   return <>{processedAuthors.map((part, i) => <React.Fragment key={i}>{part}</React.Fragment>)}</>;
 };
 
-const publicationsData = [
+
+const researchData = [ // Renamed from publicationsData
   {
     title: "Electrical Properties of ap‐SnOx/n‐SnOx Diode on a Flexible Polyimide Substrate",
     authors: "Angelica Garzon-Fontecha, Harvi A Castillo, Angel Regalado, Ricardo Valdez, Leonel Cota-Araiza, Wencel De La Cruz",
@@ -211,24 +212,24 @@ const getYear = (journalInfo) => {
 };
 
 // Sort publications by year in descending order
-const sortedPublications = [...publicationsData].sort((a, b) => {
+const sortedResearch = [...researchData].sort((a, b) => { // Renamed from sortedPublications
   const yearA = getYear(a.journalInfo);
   const yearB = getYear(b.journalInfo);
   return yearB - yearA;
 });
 
-function Publications() {
+function Research() { // Renamed from Publications
   return (
-    <Container fluid className="publications-section">
+    <Container fluid className="research-section"> {/* Consider renaming class if desired */}
       <Container>
         <h1 className="section-heading">
-          My <strong className="highlight">Publications</strong>
+          Our <strong className="highlight">Research</strong> {/* Changed title */}
         </h1>
         <p className="section-description">
           Recent research papers and academic contributions.
         </p>
-        {sortedPublications.map((pub, index) => (
-          <Card key={index} className="publication-card-view mb-4">
+        {sortedResearch.map((pub, index) => ( // Renamed from sortedPublications
+          <Card key={index} className="publication-card-view mb-4"> {/* Class name can remain or change */}
             <Row className="g-0">
               {index % 2 === 0 ? (
                 // Image on the left for even-indexed items
@@ -241,7 +242,7 @@ function Publications() {
                     />
                   </Col>
                   <Col md={8}>
-                    <Card.Body> {/* Removed d-flex flex-column */}
+                    <Card.Body> 
                       <div>
                         <Card.Title>{pub.title}</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">Authors: <HighlightedAuthors authors={pub.authors} /></Card.Subtitle>
@@ -256,7 +257,7 @@ function Publications() {
                 // Image on the right for odd-indexed items
                 <>
                   <Col md={8}>
-                    <Card.Body> {/* Removed d-flex flex-column */}
+                    <Card.Body> 
                       <div>
                         <Card.Title>{pub.title}</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">Authors: <HighlightedAuthors authors={pub.authors} /></Card.Subtitle>
@@ -277,7 +278,7 @@ function Publications() {
               )}
             </Row>
             <Row className="g-0">
-              <Col className="text-center py-3"> {/* Added py-3 for vertical padding */}
+              <Col className="text-center py-3"> 
                 <Card.Link href={pub.doi || "#"} target="_blank" rel="noreferrer">
                   View Paper
                 </Card.Link>
@@ -290,4 +291,4 @@ function Publications() {
   );
 }
 
-export default Publications;
+export default Research; // Renamed from Publications

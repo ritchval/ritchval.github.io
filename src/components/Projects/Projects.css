@@ -1,21 +1,8 @@
 .project-section {
   padding-top: 120px;
   padding-bottom: 50px;
-  background-color: #f8f9fa;
-}
-
-.section-heading {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.section-description {
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-}
-
-.highlight {
-  color: #007bff;
+  background-color: var(--section-bg-alt-color) !important;
+  transition: background-color 0.3s ease;
 }
 
 .project-card {
@@ -23,16 +10,12 @@
   margin-bottom: 30px;
 }
 
-.project-card-view {
-  border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  height: 100%;
-}
-
 .project-card-view:hover {
   transform: scale(1.02);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+}
+.dark .project-card-view:hover {
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1) !important;
 }
 
 .project-card-view .card-img-top {
@@ -42,29 +25,4 @@
 
 .project-card-view .card-body {
   padding: 20px;
-}
-
-.project-card-view .card-title {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #343a40;
-}
-
-.project-card-view .card-text {
-  margin-bottom: 15px;
-}
-
-.project-card-view .card-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 20px;
-  background-color: #007bff;
-  color: white !important;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.project-card-view .card-link:hover {
-  background-color: #0056b3;
 }

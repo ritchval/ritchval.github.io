@@ -2,13 +2,14 @@
   position: relative;
   padding-top: 150px;
   padding-bottom: 30px;
-  background-color: #ffffff;
+  background-color: var(--bg-color) !important; /* Use CSS variable */
   z-index: 1;
+  transition: background-color 0.3s ease;
 }
 
 .home-content {
   padding: 9rem 0 2rem !important;
-  color: #333;
+  color: var(--text-color); /* Use CSS variable */
   text-align: left;
 }
 
@@ -22,8 +23,8 @@
   padding-left: 45px;
 }
 
-.main-name {
-  color: #007bff;
+.main-name { /* This is for the name in the home page, not navbar */
+  color: var(--highlight-color);
 }
 
 .heading-description {
@@ -51,31 +52,169 @@
   100% { transform: rotate(0.0deg) }
 }
 
-.profile-image {
+.group-logo-container { /* Changed from .profile-image */
   margin-top: 10px;
   text-align: center;
 }
 
-.profile-image img {
-  max-width: 80%;
+.group-logo-container img { /* Changed from .profile-image img */
+  max-width: 80%; /* You can adjust this */
+  max-height: 300px; /* Optional: constrain height */
   height: auto;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 5px;
-  background-color: white;
+  padding: 5px; 
 }
 
-@media (max-width: 767px) {
-  .home-content {
-    padding-top: 5rem !important;
-    text-align: center;
-  }
+/* News Section Styles */
+.news-section-container {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  background-color: var(--section-bg-alt-color); 
+  transition: background-color 0.3s ease;
+}
 
-  .heading, .heading-name, .heading-description {
-    padding-left: 0;
-  }
+.news-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: var(--text-color); 
+  text-transform: uppercase;
+}
 
-  .profile-image img {
-    margin-top: 2rem;
+.news-carousel .carousel-inner {
+  border-radius: 8px; 
+}
+
+.news-card-link {
+  text-decoration: none;
+  color: inherit; /* Inherit color from parent, useful for theming */
+  display: block; /* Make the link take up the whole card space for clickability */
+}
+.news-card-link:hover {
+  text-decoration: none;
+}
+
+.news-card {
+  border: none; /* Remove default card border */
+  background-color: var(--card-bg-color);
+  box-shadow: var(--card-shadow);
+  border-radius: 8px; /* Rounded corners for cards */
+  overflow: hidden; /* Ensure image corners are also rounded */
+  margin-bottom: 15px; /* Space for indicators if they are outside */
+  min-height: 380px; /* Adjust as needed to ensure consistent card height */
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card-image {
+  width: 100%;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Cover to fill the space, crop if necessary */
+}
+
+.news-card-body {
+  padding: 1.25rem;
+  text-align: left;
+  flex-grow: 1; /* Allow body to grow and push content down */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes title/caption up and button down if present */
+}
+
+.news-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: var(--text-color) !important;
+}
+
+.news-card-caption {
+  font-size: 0.9rem;
+  color: var(--text-color) !important;
+  opacity: 0.8;
+  line-height: 1.5;
+  margin-bottom: 1rem; /* Space before a potential "Read More" button */
+}
+
+/* Carousel Controls (Arrows) - Styling to mimic the reference */
+.news-carousel .carousel-control-prev,
+.news-carousel .carousel-control-next {
+  width: 5%; /* Smaller width for controls */
+  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background for arrows */
+  border-radius: 50%; /* Make them circular */
+  height: 40px; /* Fixed height */
+  width: 40px; /* Fixed width */
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 10px; /* Space from edges */
+}
+.news-carousel .carousel-control-prev {
+  left: -15px; /* Adjust to position outside or slightly overlapping */
+}
+.news-carousel .carousel-control-next {
+  right: -15px; /* Adjust to position outside or slightly overlapping */
+}
+
+.news-carousel .carousel-control-prev-icon,
+.news-carousel .carousel-control-next-icon {
+  background-size: 60%, 60%; /* Make default Bootstrap icons smaller */
+  filter: invert(1); /* Make icons white if background is dark */
+}
+
+.news-carousel .carousel-control-prev:hover,
+.news-carousel .carousel-control-next:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Carousel Indicators (Dots) - Styling to mimic the reference */
+.news-carousel .carousel-indicators {
+  bottom: -30px; /* Position dots below the carousel items */
+  margin-bottom: 0;
+}
+
+.news-carousel .carousel-indicators [data-bs-target] {
+  background-color: var(--highlight-color); /* Use highlight color for dots */
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; /* Circular dots */
+  margin-right: 5px;
+  margin-left: 5px;
+  border: 1px solid var(--highlight-color); /* Optional border */
+}
+
+.news-carousel .carousel-indicators .active {
+  opacity: 1;
+  background-color: var(--highlight-color);
+}
+
+/* Optional: Read More Button (if you uncomment it in JS) */
+.news-read-more {
+  background-color: var(--highlight-color) !important;
+  border-color: var(--highlight-color) !important;
+  color: white !important;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  align-self: flex-start; /* Align button to the left */
+}
+.dark .news-read-more {
+  color: var(--bg-color) !important;
+}
+.news-read-more:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .news-card {
+    min-height: auto; /* Allow cards to resize on mobile */
+  }
+  .news-carousel .carousel-control-prev,
+  .news-carousel .carousel-control-next {
+    display: none; /* Hide arrows on smaller screens if they clutter */
+  }
+  .news-section-title {
+    font-size: 2rem;
   }
 }

@@ -26,13 +26,28 @@ function Footer() {
         
         <Col md="4" className="footer-body">
           <h3>Links</h3>
-          <ul className="footer-links">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/publications">Publications</Link></li>
-            <li><Link to="/projects">Projects</Link></li>
-            <li><Link to="/courses">Courses</Link></li>
-          </ul>
+          <div className="footer-links-paired"> {/* Changed from ul to div and new class */}
+            {[
+              { to: "/", text: "Home" },
+              { to: "/founder", text: "Founder" },
+              { to: "/research", text: "Research" },
+              { to: "/projects", text: "Projects" },
+              { to: "/courses", text: "Courses" },
+              // Add more links here if needed
+            ].reduce((acc, link, index, array) => {
+              if (index % 2 === 0) {
+                const pair = [
+                  <Link key={link.to} to={link.to}>{link.text}</Link>
+                ];
+                if (array[index + 1]) {
+                  pair.push(<span key={`sep-${index}`} className="link-separator"> | </span>);
+                  pair.push(<Link key={array[index + 1].to} to={array[index + 1].to}>{array[index + 1].text}</Link>);
+                }
+                acc.push(<div key={`pair-${index / 2}`} className="link-pair">{pair}</div>);
+              }
+              return acc;
+            }, [])}
+          </div>
         </Col>
         
         <Col md="4" className="footer-body">
